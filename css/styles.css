@@ -378,9 +378,9 @@ transform: translateY(0);}
 @media (min-width: 1025px) {
   .hero {
     direction: ltr;
-    height: 760px;
-    min-height: 760px;
-    max-height: 760px;
+    height: 820px;
+    min-height: 820px;
+    max-height: 820px;
     display: flex;
     flex-direction: row;
     align-items: stretch;
