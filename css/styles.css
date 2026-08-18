@@ -394,35 +394,22 @@ transform: translateY(0);}
     display: flex;
     flex-direction: row;
     align-items: stretch;
+
+    /* חדש — התמונה כרקע מלא של הסקשן */
+    background-image: url('../assets/images/hero-desktop.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   .hero__media {
-    position: relative;
-    inset: auto;
-    order: 2;
-    flex: 0 0 35%;
-    max-width: 35%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: visible;
-  }
-
-  .hero__image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center center;
-    transform:
-    scale(var(--hero-image-scale-desktop))
-    translateX(-35px)
-    translateY(-30px);
+    display: none; /* לא צריך יותר את עמודת התמונה הנפרדת */
   }
 
   .hero__content {
     order: 1;
-    flex: 0 0 65%;
-    max-width: 65%;
+    flex: 1 1 100%;      /* היה: flex: 0 0 65%; */
+    max-width: 100%;      /* היה: max-width: 65%; */
     min-height: 0;
     height: auto;
     display: flex;
@@ -435,7 +422,7 @@ transform: translateY(0);}
     padding-block: 0;
     box-sizing: border-box;
     direction: rtl;
-    transform: translateX(50px);
+    /* הוסר: transform: translateX(50px); — לא רלוונטי יותר כשהתוכן תופס רוחב מלא */
   }
 
   .hero__content .hero__heading-desktop {
@@ -458,7 +445,13 @@ transform: translateY(0);}
     display: block;
   }
 
+  /* חדש — צבע הטקסט הופך לקרם על גבי התמונה */
+  .hero__heading {
+    color: var(--color-cream);
+  }
+
   .hero__subheading {
+    color: var(--color-cream);
     margin-inline: 0;
     margin-block-end: 30px;
   }
@@ -495,31 +488,18 @@ transform: translateY(0);}
   .hero {
     height: calc(100svh - 120px);
     min-height: 520px;
-  }
 
-  .hero__media {
-    flex-basis: 40%;
-    max-width: 40%;
+    /* חדש — דורס את תמונת הדסקטופ, בטווח הזה בלבד */
+    background-image: url('../assets/images/hero-tablet.webp');
   }
 
   .hero__content {
-    flex-basis: 60%;
-    max-width: 60%;
-
     padding-inline: 28px;
   }
 
   .hero__text-col {
     max-width: 480px;
   }
-
-  /*
-   * בטאבלט מעט פחות הגדלה
-   * כדי לא לדחוף את התמונה מחוץ לאזור.
-   */
-  .hero__image {
-  transform: scale(1.10) translateX(-15px) translateY(-20px);
-}
 }
 
 /* =========================================================
