@@ -640,7 +640,7 @@ transform: translateY(0);}
 }
 
 .cta__text h2 {
-  color: var(--color-text-on-dark);
+  color: var(--color-brown);
   margin-block-end: 18px;
 }
 
@@ -648,7 +648,6 @@ transform: translateY(0);}
 /* =========================================================
    CTA — DESKTOP ONLY
    ========================================================= */
-
 @media (min-width: 1025px) {
 
   .cta__text {
@@ -656,14 +655,13 @@ transform: translateY(0);}
   }
 
   .cta__text h2 {
-     color: var(--color-navy);
     white-space: nowrap;
   }
 
 }
 
 .cta__text p {
-  color: var(--color-navy);
+  color: var(--color-brown);
   font-size: var(--fs-body-lg);
   max-width: 46ch;
   margin-inline: auto;
@@ -672,7 +670,7 @@ transform: translateY(0);}
 .contact-form {
   width: 100%;
   margin-inline: auto;
-  background: var(--color-navy);
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
@@ -700,7 +698,7 @@ transform: translateY(0);}
   display: block;
   font-size: var(--fs-small);
   font-weight: var(--fw-medium);
-  color: var(--color-text-on-dark);
+  color: var(--color-brown);
   margin-block-end: 8px;
 }
 
@@ -709,15 +707,15 @@ transform: translateY(0);}
   width: 100%;
   padding: 10px 14px;
   border-radius: var(--radius-field);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(var(--color-brown-rgb), 0.18);
   background: rgba(255, 255, 255, 0.05);
-  color: var(--color-cream);
+  color: var(--color-brown);
   box-shadow: var(--shadow-inner-field);
 }
 
 .form-field input::placeholder,
 .form-field textarea::placeholder {
-  color: rgba(237, 235, 232, 0.45);
+  color: rgba(var(--color-brown-rgb), 0.55);
 }
 
 .form-field textarea {
@@ -981,6 +979,7 @@ transform: translateY(0);}
   }
 
   .cta__text p {
+     color: var(--color-brown);
     margin-inline: auto;
   }
 
