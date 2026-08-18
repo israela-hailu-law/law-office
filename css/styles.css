@@ -637,27 +637,12 @@ transform: translateY(0);}
 .cta__text {
   max-width: 640px;
   margin-inline: auto;
+  text-align: center;
 }
 
 .cta__text h2 {
   color: var(--color-brown);
   margin-block-end: 18px;
-}
-
-
-/* =========================================================
-   CTA — DESKTOP ONLY
-   ========================================================= */
-@media (min-width: 1025px) {
-
-  .cta__text {
-    max-width: none;
-  }
-
-  .cta__text h2 {
-    white-space: nowrap;
-  }
-
 }
 
 .cta__text p {
@@ -666,6 +651,20 @@ transform: translateY(0);}
   max-width: 46ch;
   margin-inline: auto;
 }
+
+
+/* =========================================================
+   CTA — TABLET + DESKTOP
+   ========================================================= */
+
+@media (min-width: 761px) {
+
+  .cta__text h2 {
+    white-space: nowrap;
+  }
+
+}
+
 
 .contact-form {
   width: 100%;
