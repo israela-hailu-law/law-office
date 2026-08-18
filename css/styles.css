@@ -639,6 +639,8 @@ transform: translateY(0);}
   max-width: 640px;
   margin-inline: auto;
   text-align: center;
+   padding-top: 28px;
+  border-top: 1px solid rgba(var(--color-brown-rgb), 0.25);
 }
 
 .cta__text h2 {
@@ -767,9 +769,11 @@ transform: translateY(0);}
 /* =========================================================
    FOOTER
    ========================================================= */
+
 .site-footer {
-  background: var(--color-cream);
+  background: var(--color-brown);
   padding-block: 48px 28px;
+  color: var(--color-cream);
 }
 
 .site-footer__top {
@@ -781,20 +785,23 @@ transform: translateY(0);}
 }
 
 .site-footer__logo {
-  height: 46px; /* דסקטופ: 42px + 4px */
+  height: 46px;
   width: auto;
 }
 
 .site-footer__contact a {
-  color: var(--color-text-on-cream);
+  color: var(--color-cream);
   font-size: var(--fs-small);
   transition: opacity var(--duration-fast);
 }
-.site-footer__contact a:hover { opacity: 0.7; }
+
+.site-footer__contact a:hover {
+  opacity: 0.7;
+}
 
 .site-footer__divider {
   border: none;
-  border-top: 1px solid rgba(var(--color-brown-rgb), 0.25);
+  border-top: 1px solid rgba(237, 235, 232, 0.25);
   margin-block: 28px;
 }
 
@@ -813,25 +820,32 @@ transform: translateY(0);}
 }
 
 .site-footer__legal-links a {
-  color: var(--color-text-on-cream);
+  color: var(--color-cream);
   transition: opacity var(--duration-fast);
 }
+
 .site-footer__legal-links a:hover,
-.site-footer__legal-links a:focus-visible { opacity: 0.65; text-decoration: underline; }
+.site-footer__legal-links a:focus-visible {
+  opacity: 0.65;
+  text-decoration: underline;
+}
 
 .site-footer__copyright {
   font-size: var(--fs-small);
-  color: rgba(var(--color-brown-rgb), 0.85);
+  color: rgba(237, 235, 232, 0.85);
 }
 
 .site-footer__credit {
   font-size: var(--fs-small);
-  color: rgba(var(--color-brown-rgb), 0.85);
+  color: rgba(237, 235, 232, 0.85);
   transition: opacity var(--duration-fast);
 }
-.site-footer__credit:hover,
-.site-footer__credit:focus-visible { opacity: 0.65; text-decoration: underline; }
 
+.site-footer__credit:hover,
+.site-footer__credit:focus-visible {
+  opacity: 0.65;
+  text-decoration: underline;
+}
 /* =========================================================
    SOCIAL ICONS — exact spec supplied by client, מוקטן ב-2px
    ========================================================= */
