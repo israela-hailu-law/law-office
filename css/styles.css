@@ -338,6 +338,15 @@ textarea:focus-visible {
   letter-spacing: var(--hero-letter-spacing-text);
   line-height: var(--hero-line-height-text);
 }
+.desktop-break {
+  display: none;
+}
+
+@media (min-width: 761px) {
+  .desktop-break {
+    display: inline;
+  }
+}
 
 /* =========================================================
    HERO — BUTTONS
