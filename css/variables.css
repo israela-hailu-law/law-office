@@ -1,0 +1,76 @@
+/* =========================================================
+   DESIGN TOKENS
+   מבוסס על מפרט Figma מאושר. כל הערכים המסומנים "מדויק"
+   הגיעו ישירות מהלקוחה. ערכים המסומנים "משוער" הם הערכה
+   הנדסית סבירה (glass/shadow) שממתינה לאישור סופי מול Figma.
+   ========================================================= */
+:root {
+  /* ---- Brand colors (מדויק) ---- */
+  --color-navy: #1F3248;
+  --color-navy-rgb: 31, 50, 72;
+  --color-brown: #76665B;
+  --color-brown-rgb: 118, 102, 91;
+  --color-cream: #EDEBE8;
+  --color-cream-rgb: 237, 235, 232;
+
+  /* ---- Derived text colors ----
+     נבדק ידנית מול ניגודיות WCAG AA (חובה לפי בריף הנגישות):
+     brown-on-cream ≈ 4.6:1 (עובר AA לטקסט רגיל)
+     cream-on-navy  ≈ 11:1 (עובר AAA)
+     cream-on-brown ≈ 4.6:1 (עובר AA לטקסט רגיל) */
+  --color-text-on-cream: var(--color-brown);
+  --color-text-on-dark: var(--color-cream);
+  --color-text-muted-on-dark: rgba(var(--color-cream-rgb), 0.78);
+
+  /* ---- Typography ---- */
+  --font-family: "Heebo", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  --fs-h1: clamp(2rem, 1.4rem + 2.8vw, 4.1rem);
+  --fs-h2: clamp(1.5rem, 1.2rem + 1.4vw, 2.35rem);
+  --fs-h3: clamp(1.05rem, 0.95rem + 0.4vw, 1.25rem);
+  --fs-body-lg: clamp(1rem, 0.93rem + 0.3vw, 1.15rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-eyebrow: 0.875rem;
+
+  --lh-heading: 1.2;
+  --lh-body: 1.65;
+
+  /* ---- Layout ---- */
+  --container-max: 1280px;
+  --container-padding-inline: clamp(20px, 5vw, 80px);
+  --section-padding-block: clamp(56px, 9vw, 120px);
+
+  /* ---- Radius (מדויק היכן שצוין) ---- */
+  --radius-pill: 999px;
+  --radius-card: 20px;
+  --radius-header-corner: 37px; /* מדויק — פינה שמאלית-תחתונה של ה-Header */
+  --radius-field: 14px;
+
+  /* ---- Shadows (משוער, glassmorphism סטנדרטי) ---- */
+  --shadow-drop-btn: 0 8px 20px rgba(0, 0, 0, 0.22);
+  --shadow-drop-card: 0 4px 18px rgba(0, 0, 0, 0.12);
+  --shadow-inner-field:
+    inset 0 2px 6px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --shadow-focus: 0 0 0 3px rgba(255, 255, 255, 0.9), 0 0 0 5px var(--color-navy);
+
+  /* ---- Glass effect (משוער) ---- */
+  --glass-blur: 12px;
+  --glass-bg-on-photo: rgba(var(--color-cream-rgb), 0.16);
+  --glass-border-on-photo: rgba(255, 255, 255, 0.35);
+  --glass-bg-card: rgba(255, 255, 255, 0.08);
+  --glass-border-card: rgba(255, 255, 255, 0.18);
+
+  /* ---- Motion ---- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+
+  /* ---- Z-index scale ---- */
+  --z-header: 50;
+  --z-skiplink: 100;
+}
