@@ -477,19 +477,104 @@ transform: translateY(0);}
 @media (min-width: 761px) and (max-width: 1024px) {
 
   .hero {
+    direction: ltr;
     height: calc(100svh - 120px);
     min-height: 520px;
+    max-height: none;
 
-    /* חדש — דורס את תמונת הדסקטופ, בטווח הזה בלבד */
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+
     background-image: url('../assets/images/hero-tablet.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .hero__media {
+    display: none;
   }
 
   .hero__content {
+    order: 1;
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-height: 0;
+
+    /* חשוב — לא 760px */
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     padding-inline: 28px;
+    padding-block: 0;
+
+    box-sizing: border-box;
+    direction: rtl;
+  }
+
+  .hero__content .hero__heading-desktop {
+    display: inline;
+  }
+
+  .hero__content .hero__heading-mobile {
+    display: none;
   }
 
   .hero__text-col {
+    width: 100%;
     max-width: 480px;
+
+    margin-inline-start: 0;
+    margin-inline-end: auto;
+
+    text-align: right;
+  }
+
+  .hero__intro {
+    display: block;
+  }
+
+  .hero__heading {
+    color: var(--color-cream);
+  }
+
+  .hero__subheading {
+    color: var(--color-cream);
+    margin-inline: 0;
+    margin-block-end: 30px;
+  }
+
+  .hero__actions {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 14px;
+
+    width: auto;
+    max-width: none;
+
+    margin-inline-start: 0;
+    margin-inline-end: auto;
+
+    transform: none;
+    direction: rtl;
+  }
+
+  .hero__actions .btn--primary {
+    order: 1;
+  }
+
+  .hero__actions .btn--secondary {
+    order: 2;
   }
 }
 
