@@ -633,7 +633,33 @@ transform: translateY(0);}
   color: #5A4C42;
   font-size: var(--fs-body);
 }
-CTA — DESKTOP ONLY
+
+.cta__text {
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.cta__text h2 {
+  color: var(--color-text-on-dark);
+  margin-block-end: 18px;
+}
+
+
+/* =========================================================
+   CTA — DESKTOP ONLY
+   ========================================================= */
+
+@media (min-width: 1025px) {
+
+  .cta__text {
+    max-width: none;
+  }
+
+  .cta__text h2 {
+    white-space: nowrap;
+  }
+
+}
 
 .cta__text p {
   color: var(--color-text-muted-on-dark);
