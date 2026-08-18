@@ -375,7 +375,7 @@ transform: translateY(0);}
    HERO — DESKTOP
    ========================================================= */
 
-@media (min-width: 761px) {
+@media (min-width: 1025px) {
   .hero {
     direction: ltr;
     height: 760px;
