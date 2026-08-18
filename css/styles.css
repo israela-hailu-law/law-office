@@ -140,17 +140,13 @@ textarea:focus-visible {
    (שקיפות + blur) וצל עדין — זהה במובייל ובדסקטופ.
    ========================================================= */
 .site-header {
-  position: sticky;
+  position: fixed;      /* היה: sticky */
   top: 0;
+  left: 0;               /* חדש */
+  right: 0;               /* חדש */
   z-index: var(--z-header);
-
-  /* רקע אטום — בלי שקיפות ובלי glass */
   background: var(--color-navy);
-
-  /* אין blur / backdrop-filter */
   border-bottom-left-radius: 40px;
-
-  /* Drop shadow ברור כלפי מטה */
   box-shadow:
     0 8px 24px rgba(0, 0, 0, 0.22),
     0 3px 8px rgba(0, 0, 0, 0.12);
@@ -320,11 +316,8 @@ textarea:focus-visible {
 
 .hero__heading {
   font-size: var(--fs-h1);
-  color: var(--color-brown);
-
+  color: var(--color-cream);   /* היה: var(--color-brown); */
   margin-block-end: 8px;
-
-  /* עריכה נוחה */
   letter-spacing: var(--hero-letter-spacing-heading);
   line-height: var(--hero-line-height-heading);
 }
@@ -339,12 +332,9 @@ textarea:focus-visible {
 
 .hero__subheading {
   font-size: var(--fs-body-lg);
-  color: var(--color-text-on-cream);
-
+  color: var(--color-cream);   /* היה: var(--color-text-on-cream); */
   max-width: 46ch;
   margin-inline: auto;
-
-  /* עריכה נוחה */
   letter-spacing: var(--hero-letter-spacing-text);
   line-height: var(--hero-line-height-text);
 }
@@ -432,14 +422,14 @@ transform: translateY(0);}
   .hero__content .hero__heading-mobile {
     display: none;
   }
-
-  .hero__text-col {
-    width: 100%;
-    max-width: 620px;
-    margin-inline-start: auto;
-    margin-inline-end: 0;
-    text-align: right;
-  }
+   
+.hero__text-col {
+  width: 100%;
+  max-width: 620px;
+  margin-inline-start: 0;      /* היה: auto */
+  margin-inline-end: auto;     /* היה: 0 */
+  text-align: right;
+}
 
   .hero__intro {
     display: block;
@@ -456,19 +446,20 @@ transform: translateY(0);}
     margin-block-end: 30px;
   }
 
-  .hero__actions {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 14px;
-    width: auto;
-    max-width: none;
-    margin-inline: 0;
-    transform: none;
-    direction: rtl;
-  }
+.hero__actions {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+  width: auto;
+  max-width: none;
+  margin-inline-start: 0;      /* היה: margin-inline: 0; */
+  margin-inline-end: auto;     /* חדש */
+  transform: none;
+  direction: rtl;
+}
 
   .hero__actions .btn--primary {
     order: 1;
