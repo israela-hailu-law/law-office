@@ -333,7 +333,7 @@ textarea:focus-visible {
 .hero__subheading {
   font-size: var(--fs-body-lg);
   color: var(--color-cream);   /* היה: var(--color-text-on-cream); */
-  max-width: 46ch;
+  max-width: none;
   margin-inline: auto;
   letter-spacing: var(--hero-letter-spacing-text);
   line-height: var(--hero-line-height-text);
@@ -648,11 +648,10 @@ transform: translateY(0);}
   margin-block-end: 18px;
   text-align: center;
 }
-
 .cta__text p {
   color: var(--color-brown);
   font-size: var(--fs-body-lg);
-  max-width: 46ch;
+  max-width: none;
   margin-inline: auto;
   text-align: center;
 }
