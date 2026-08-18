@@ -138,3 +138,51 @@
     }
   });
 })();
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    const targetId = this.getAttribute('href');
+
+    if (targetId === '#') return;
+
+    const target = document.querySelector(targetId);
+
+    if (!target) return;
+
+    e.preventDefault();
+
+    const start = window.scrollY;
+    const targetPosition =
+      target.getBoundingClientRect().top +
+      window.scrollY -
+      100;
+
+    const distance = targetPosition - start;
+    const duration = 800;
+    let startTime = null;
+
+    function easeInOut(t) {
+      return t < 0.5
+        ? 2 * t * t
+        : 1 - Math.pow(-2 * t + 2, 2) / 2;
+    }
+
+    function animateScroll(currentTime) {
+      if (!startTime) startTime = currentTime;
+
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeInOut(progress);
+
+      window.scrollTo(
+        0,
+        start + distance * easedProgress
+      );
+
+      if (progress < 1) {
+        requestAnimationFrame(animateScroll);
+      }
+    }
+
+    requestAnimationFrame(animateScroll);
+  });
+});
