@@ -73,6 +73,8 @@ textarea:focus-visible {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  height: 46px;
+  box-sizing: border-box;
   padding: 15px 30px;
   border-radius: var(--radius-pill);
   font-weight: var(--fw-medium);
@@ -173,9 +175,10 @@ textarea:focus-visible {
   height: 50px;
   width: auto;
 }
-
 .site-header__cta {
-  padding: 11px 22px;
+  height: 46px;
+  box-sizing: border-box;
+  padding-inline: 22px;
   font-size: var(--fs-small);
   background: transparent;
   color: var(--color-cream);
