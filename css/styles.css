@@ -919,7 +919,7 @@ transform: translateY(0);}
 
   .hero__content {
     height: 790px;
-    padding-block: 110px 0;
+    padding-block: 100px 0;
     box-sizing: border-box;
   }
 .hero__actions {
@@ -933,7 +933,7 @@ transform: translateY(0);}
   }
 
 .hero__image {
-  transform: scale(1.10) translateY(20px);
+  transform: scale(1.15) translateY(20px);
    }
 }
 
