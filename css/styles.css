@@ -795,6 +795,7 @@ transform: translateY(0);}
 .site-footer__logo {
   height: 46px;
   width: auto;
+   color: var(--color-cream);
 }
 
 .site-footer__contact a {
@@ -872,14 +873,14 @@ transform: translateY(0);}
   justify-content:center;
   text-decoration:none;
   border-radius:50%;
-  background:rgba(237,235,232,0.06);
-  border:1px solid rgba(237,235,232,0.20);
+background: rgba(237,235,232,0.02);
+border: 1px solid rgba(237,235,232,0.28);
   backdrop-filter:blur(4px) saturate(180%);
   -webkit-backdrop-filter:blur(4px) saturate(180%);
   box-shadow:
     0 3px 8px rgba(0,0,0,0.20),
     inset 0 1px 0 rgba(255,255,255,0.15);
-  color:#8F7D6E;
+  color: var(--color-cream);
   -webkit-tap-highlight-color:
     rgba(237,235,232,0.15);
   transition: transform var(--duration-fast) var(--ease-standard);
