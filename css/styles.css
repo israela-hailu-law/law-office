@@ -980,6 +980,10 @@ border: 1px solid rgba(237,235,232,0.28);
    ========================================================= */
 @media (max-width: 760px) {
 
+   .form-privacy-note {
+  text-align: center;
+}
+   
   .site-header__inner {
     padding-block: 8px 16px;
   }
