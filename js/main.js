@@ -28,14 +28,20 @@
         return "";
       }
     },
-    email: {
-      el: document.getElementById("email"),
-      errorEl: document.getElementById("email-error"),
-      validate: (v) => {
-        const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return pattern.test(v.trim()) ? "" : "נא להזין כתובת מייל תקינה.";
-      }
-    }
+  email: {
+  el: document.getElementById("email"),
+  errorEl: document.getElementById("email-error"),
+  validate: (v) => {
+    const value = v.trim();
+
+    // שדה המייל אינו חובה
+    if (value === "") return "";
+
+    // אם הוזן מייל, הוא חייב להיות תקין
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return pattern.test(value) ? "" : "נא להזין כתובת מייל תקינה.";
+  }
+}
   };
 
   // מניעת הקלדת תווים שאינם ספרות בשדה הטלפון (בנוסף ל-inputmode/pattern ב-HTML)
