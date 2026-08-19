@@ -117,8 +117,9 @@
         body: JSON.stringify(payload)
       });
 
-      if (!response.ok) {
-        throw new Error("Server responded with an error");
+           if (!response.ok) {
+        const errData = await response.json().catch(() => ({}));
+        throw new Error(errData.message || "Server responded with an error");
       }
 
       form.reset();
