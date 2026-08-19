@@ -130,10 +130,7 @@
       });
       setStatus("success", "הפנייה נשלחה בהצלחה. ניצור איתך קשר בהקדם.");
     } catch (err) {
-      setStatus(
-        "error",
-        "אירעה שגיאה בשליחת הפנייה. ניתן לנסות שוב, או ליצור קשר ישירות בטלפון/מייל שבתחתית העמוד."
-      );
+      setStatus("error", "שגיאה: " + err.message);
     } finally {
       setLoading(false);
     }
