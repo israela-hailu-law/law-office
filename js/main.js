@@ -117,9 +117,8 @@
         body: JSON.stringify(payload)
       });
 
-           if (!response.ok) {
-        const errData = await response.json().catch(() => ({}));
-        throw new Error(errData.message || "Server responded with an error");
+          if (!response.ok) {
+        throw new Error("Server responded with an error");
       }
 
       form.reset();
@@ -129,8 +128,11 @@
         f.errorEl.textContent = "";
       });
       setStatus("success", "הפנייה נשלחה בהצלחה. ניצור איתך קשר בהקדם.");
-    } catch (err) {
-      setStatus("error", "שגיאה: " + err.message);
+     } catch (err) {
+      setStatus(
+        "error",
+        "אירעה שגיאה בשליחת הפנייה. ניתן לנסות שוב, או ליצור קשר ישירות בטלפון/מייל שבתחתית העמוד."
+      );
     } finally {
       setLoading(false);
     }
