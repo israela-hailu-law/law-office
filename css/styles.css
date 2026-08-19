@@ -1016,15 +1016,26 @@ border: 1px solid rgba(237,235,232,0.28);
     height: 38px; /* מובייל: 36px + 2px */
   }
 
-  .site-footer__top {
-    flex-direction: column;
-    text-align: center;
-  }
+.site-footer__top {
+  flex-direction: column;
+  text-align: center;
+}
 
-  .site-footer__legal {
-    flex-direction: column;
-    text-align: center;
-  }
+.site-footer__contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.site-footer__contact span[aria-hidden="true"] {
+  display: none;
+}
+
+.site-footer__legal {
+  flex-direction: column;
+  text-align: center;
+}
   /* HERO — MOBILE ONLY */
   .hero {
     min-height: 790px;
