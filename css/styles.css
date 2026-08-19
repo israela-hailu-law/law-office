@@ -975,6 +975,17 @@ border: 1px solid rgba(237,235,232,0.28);
 }
 .legal-page__back:hover { text-decoration: underline; }
 
+.privacy-note-break {
+  display: inline;
+}
+
+@media (min-width: 761px) {
+  .privacy-note-break {
+    display: block;
+  }
+}
+
+
 /* =========================================================
    RESPONSIVE — MOBILE (≤760px)
    ========================================================= */
@@ -982,6 +993,9 @@ border: 1px solid rgba(237,235,232,0.28);
 
    .form-privacy-note {
   text-align: center;
+}
+   .privacy-note-break {
+  display: inline;
 }
    
   .site-header__inner {
