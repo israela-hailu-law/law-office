@@ -1159,6 +1159,10 @@ border: 1px solid rgba(237,235,232,0.28);
     flex-basis: 100%;
   }
 
+   .contact-form .form-privacy-note {
+  text-align: left;
+}
+   
   /* -----------------------------------------
      כפתור שליחה
      מתחת לטופס, מיושר לשמאל
