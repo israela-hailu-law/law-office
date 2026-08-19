@@ -63,3 +63,4 @@ export async function onRequestPost(context) {
       { status: 500, headers: { "Content-Type": "application/json" } }
     );
   }
+}
