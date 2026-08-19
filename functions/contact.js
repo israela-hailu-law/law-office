@@ -59,8 +59,7 @@ export async function onRequestPost(context) {
     });
   } catch (err) {
     return new Response(
-      JSON.stringify({ success: false, message: "שגיאת שרת בשליחת הטופס." }),
+      JSON.stringify({ success: false, message: err.message || "שגיאת שרת בשליחת הטופס." }),
       { status: 500, headers: { "Content-Type": "application/json" } }
     );
   }
-}
