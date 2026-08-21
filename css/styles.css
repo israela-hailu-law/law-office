@@ -1213,7 +1213,12 @@ body {
  
    
    /* ---------- HEADER: בדיוק כמו שהיה, לא משתנה ---------- */
-  .site-header__inner {
+
+     .site-header {
+    position: static;
+  }
+   
+   .site-header__inner {
     padding-block: 8px;
   }
 
@@ -1228,13 +1233,12 @@ body {
   }
 
   /* ---------- HERO: צמוד בדיוק לגובה ה-Header, בלי רווח ---------- */
-    .hero {
+  .hero {
     --hero-landscape-header-h: 54px;
     --hero-landscape-bg-y: 20%;
-    --hero-gap-tight: clamp(10px, 3vh, 18px);   /* כותרת ↔ טקסט */
-    --hero-gap-wide: clamp(26px, 5.5vh, 36px);  /* טקסט ↔ כפתורים */
+    --hero-gap-tight: clamp(10px, 3vh, 18px);
+    --hero-gap-wide: clamp(26px, 5.5vh, 36px);
     direction: ltr;
-    margin-block-start: var(--hero-landscape-header-h);
     height: calc(100dvh - var(--hero-landscape-header-h));
     min-height: 220px;
     max-height: none;
