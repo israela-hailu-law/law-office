@@ -1210,7 +1210,6 @@ body {
    דרך גובה מסך קטן + מכשיר מגע (לא עכבר).
    ========================================================= */
 @media (orientation: landscape) and (max-height: 500px) and (hover: none) and (pointer: coarse) {
-
   /* ---------- HEADER ---------- */
   .site-header {
     display: block;
@@ -1225,27 +1224,22 @@ body {
   /* ---------- HERO ---------- */
   .hero {
     direction: ltr;
-
     height: calc(100svh - var(--header-height, 70px));
     min-height: 280px;
     max-height: none;
-
     display: flex;
     flex-direction: row;
     align-items: stretch;
-
     background-image: url('../assets/images/hero-desktop.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
-
   .hero__media {
     display: none;
   }
 
   /* ---------- HERO CONTENT ---------- */
-
   .hero__content {
     order: 1;
     flex: 1 1 100%;
@@ -1253,120 +1247,83 @@ body {
     max-width: 100%;
     height: auto;
     min-height: 0;
-
     display: flex;
     flex-direction: column;
-
     justify-content: center;
-    align-items: flex-start;
-
+    align-items: flex-end;   /* שונה מ-flex-start: זה מיישר את כל הילדים לימין אוטומטית */
     padding-inline: clamp(30px, 6vw, 80px);
     padding-block: 20px;
-
     box-sizing: border-box;
     direction: rtl;
+    gap: 16px;                /* חדש: רווח אחיד בין text-col לבין actions */
   }
 
   .hero__content .hero__heading-desktop {
     display: inline;
   }
-
   .hero__content .hero__heading-mobile {
     display: none;
   }
 
+  /* ---------- TEXT BLOCK ---------- */
+  .hero__text-col {
+    display: flex;             /* חדש */
+    flex-direction: column;    /* חדש */
+    gap: 8px;                  /* חדש: רווח אחיד בין כותרת לטקסט משני */
+    width: 52%;
+    max-width: 450px;
+    min-width: 0;
+    margin: 0;                 /* שונה: הוסר ה--8px וה-auto, כי flex-end על ההורה כבר מיישר */
+    text-align: right;
+  }
 
+  /* ---------- HEADING ---------- */
+  .hero__heading {
+    color: var(--color-cream);
+    font-size: clamp(1.85rem, 5.5vh, 2.75rem);
+    line-height: 1.15;
+    margin: 0;                 /* שונה: הרווח עבר ל-gap של text-col */
+  }
 
-/* ---------- TEXT BLOCK ---------- */
+  /* ---------- SUBHEADING ---------- */
+  .hero__subheading {
+    color: var(--color-cream);
+    width: 100%;
+    margin: 0;
+    font-size: clamp(0.9rem, 2.7vh, 1.08rem);
+    line-height: 1.4;
+    text-align: right;
+  }
 
-.hero__text-col {
-  width: 52%;
-  max-width: 450px;
-  min-width: 0;
-
-  /* הבלוק כולו כמה פיקסלים ימינה */
-  margin: 0 -8px 0 auto;
-
-  text-align: right;
-}
-
-
-/* ---------- HEADING ---------- */
-
-.hero__heading {
-  color: var(--color-cream);
-
-  font-size: clamp(1.85rem, 5.5vh, 2.75rem);
-  line-height: 1.15;
-
-  margin: 0 0 8px 0;
-}
-
-
-/* ---------- SUBHEADING ---------- */
-
-.hero__subheading {
-  color: var(--color-cream);
-
-  width: 100%;
-  margin: 0;
-
-  font-size: clamp(0.9rem, 2.7vh, 1.08rem);
-  line-height: 1.4;
-
-  text-align: right;
-}
-
-
-/* ---------- BUTTONS ---------- */
-/* ---------- BUTTONS ---------- */
-
-.hero__actions {
-  position: relative;
-
-  width: 52%;
-  max-width: 450px;
-  min-width: 0;
-
-  margin: 22px -8px 0 auto;
-
-  display: flex;
-  flex-direction: row;
-
-  align-items: center;
-  justify-content: flex-start;
-
-  gap: 12px;
-
-  direction: rtl;
-
-  transform: none;
-
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.hero__actions .btn {
-  height: clamp(38px, 7vh, 46px);
-
-  padding-inline: clamp(10px, 2vw, 18px);
-
-  font-size: clamp(0.8rem, 2.3vh, 1rem);
-
-  flex: 1 1 0;
-  min-width: 0;
-  max-width: 100%;
-
-  box-sizing: border-box;
-  white-space: nowrap;
-}
-
-.hero__actions .btn--primary {
-  order: 1;
-}
-
-.hero__actions .btn--secondary {
-  order: 2;
+  /* ---------- BUTTONS ---------- */
+  .hero__actions {
+    width: 52%;
+    max-width: 450px;
+    margin: 0;                 /* שונה: הוסר ה-margin-top, הרווח עכשיו מגיע מה-gap של ההורה */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    direction: rtl;
+    box-sizing: border-box;
+    overflow: visible;
+  }
+  .hero__actions .btn {
+    height: clamp(38px, 7vh, 46px);
+    padding-inline: clamp(10px, 2vw, 18px);
+    font-size: clamp(0.8rem, 2.3vh, 1rem);
+    flex: 0 1 auto;
+    min-width: fit-content;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
+  .hero__actions .btn--primary {
+    order: 1;
+  }
+  .hero__actions .btn--secondary {
+    order: 2;
+  }
 }
 
   /* ---------- SERVICES ---------- */
