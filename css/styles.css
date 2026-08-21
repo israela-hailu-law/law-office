@@ -1209,6 +1209,7 @@ body {
    מזהה טלפון (לא טאבלט/דסקטופ) שמסובב ללנדסקייפ
    דרך גובה מסך קטן + מכשיר מגע (לא עכבר).
    ========================================================= */
+```css
 @media (orientation: landscape) and (max-height: 500px) and (hover: none) and (pointer: coarse) {
 
   /* ---------- HEADER ---------- */
@@ -1245,8 +1246,6 @@ body {
   }
 
   /* ---------- HERO CONTENT ---------- */
-  /* ---------- HERO CONTENT ---------- */
-
   .hero__content {
     order: 1;
     flex: 1 1 100%;
@@ -1276,101 +1275,192 @@ body {
     display: none;
   }
 
+  /* ---------- TEXT BLOCK ---------- */
 
+  .hero__text-col {
+    width: 52%;
+    max-width: 450px;
+    min-width: 0;
 
-/* ---------- TEXT BLOCK ---------- */
+    /* כל בלוק התוכן מיושר לאותו קו */
+    margin: 0 -8px 0 auto;
 
-.hero__text-col {
-  width: 52%;
-  max-width: 450px;
-  min-width: 0;
+    text-align: right;
+  }
 
-  /* הבלוק כולו כמה פיקסלים ימינה */
-  margin: 0 -8px 0 auto;
+  /* ---------- HEADING ---------- */
 
-  text-align: right;
+  .hero__heading {
+    color: var(--color-cream);
+
+    font-size: clamp(1.85rem, 5.5vh, 2.75rem);
+    line-height: 1.15;
+
+    margin: 0 0 8px 0;
+  }
+
+  /* ---------- SUBHEADING ---------- */
+
+  .hero__subheading {
+    color: var(--color-cream);
+
+    width: 100%;
+    margin: 0;
+
+    font-size: clamp(0.9rem, 2.7vh, 1.08rem);
+    line-height: 1.4;
+
+    text-align: right;
+  }
+
+  /* ---------- BUTTONS ---------- */
+
+  .hero__actions {
+    position: relative;
+
+    width: 52%;
+    max-width: 450px;
+    min-width: 0;
+
+    /* מיושר בדיוק עם בלוק הטקסט */
+    margin: 22px -8px 0 auto;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 12px;
+
+    direction: rtl;
+
+    transform: none;
+
+    box-sizing: border-box;
+  }
+
+  .hero__actions .btn {
+    height: clamp(38px, 7vh, 46px);
+
+    padding-inline: clamp(14px, 2.5vw, 24px);
+
+    font-size: clamp(0.8rem, 2.3vh, 1rem);
+
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: 100%;
+
+    box-sizing: border-box;
+    white-space: nowrap;
+  }
+
+  /* RTL: הכפתור הראשי מימין */
+  .hero__actions .btn--primary {
+    order: 1;
+  }
+
+  .hero__actions .btn--secondary {
+    order: 2;
+  }
+
+  /* ---------- SERVICES ---------- */
+
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ---------- CONTACT FORM ---------- */
+
+  .contact-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10px;
+    direction: rtl;
+  }
+
+  .contact-form .form-field {
+    flex: 0 0 calc(50% - 5px);
+    width: calc(50% - 5px);
+    min-width: 0;
+    margin-block-end: 0;
+    direction: rtl;
+  }
+
+  .form-field--name {
+    order: 1;
+  }
+
+  .form-field--phone {
+    order: 2;
+  }
+
+  .form-field--email {
+    order: 3;
+  }
+
+  .form-field--message {
+    order: 4;
+  }
+
+  .contact-form .form-field--message textarea {
+    min-height: 100px;
+  }
+
+  .contact-form .form-privacy-note,
+  .contact-form .form-status {
+    flex-basis: 100%;
+  }
+
+  .contact-form .form-privacy-note {
+    text-align: right;
+  }
+
+  .contact-form .btn--submit {
+    display: flex;
+    flex: 0 0 auto;
+    width: auto;
+    padding-inline: 40px;
+    padding-block: 10px;
+    margin-inline-start: auto;
+    margin-inline-end: 0;
+  }
+
+  /* ---------- FOOTER: חלק עליון — 3 עמודות ---------- */
+
+  .site-footer__top {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: right;
+  }
+
+  .site-footer__contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .site-footer__contact span[aria-hidden="true"] {
+    display: none;
+  }
+
+  /* ---------- FOOTER: חלק תחתון — 3 עמודות ---------- */
+
+  .site-footer__legal {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: right;
+  }
 }
+```
 
+השינוי המרכזי הוא שה־`.hero__actions` קיבל את אותו `margin-right: -8px` כמו `.hero__text-col`, כך שהכותרת, הטקסט והכפתורים מיושרים לאותו צד.
 
-/* ---------- HEADING ---------- */
-
-.hero__heading {
-  color: var(--color-cream);
-
-  font-size: clamp(1.85rem, 5.5vh, 2.75rem);
-  line-height: 1.15;
-
-  margin: 0 0 8px 0;
-}
-
-
-/* ---------- SUBHEADING ---------- */
-
-.hero__subheading {
-  color: var(--color-cream);
-
-  width: 100%;
-  margin: 0;
-
-  font-size: clamp(0.9rem, 2.7vh, 1.08rem);
-  line-height: 1.4;
-
-  text-align: right;
-}
-
-
-/* ---------- BUTTONS ---------- */
-
-.hero__actions {
-  position: relative;
-
-  width: 52%;
-  max-width: 450px;
-  min-width: 0;
-
-  /*
-   * לא להזיז את הכפתורים ימינה.
-   * ה-auto נשאר רק בצד שמאל כדי לשמור אותם בתוך אזור התוכן.
-   */
-  margin: 22px 0 0 auto;
-
-  display: flex;
-  flex-direction: row;
-
-  align-items: center;
-  justify-content: flex-start;
-
-  gap: 12px;
-
-  direction: rtl;
-
-  transform: none;
-
-  box-sizing: border-box;
-}
-
-.hero__actions .btn {
-  height: clamp(38px, 7vh, 46px);
-
-  padding-inline: clamp(14px, 2.5vw, 24px);
-
-  font-size: clamp(0.8rem, 2.3vh, 1rem);
-
-  flex: 0 1 auto;
-  min-width: 0;
-  max-width: 100%;
-
-  box-sizing: border-box;
-  white-space: nowrap;
-}
-
-.hero__actions .btn--primary {
-  order: 1;
-}
-
-.hero__actions .btn--secondary {
-  order: 2;
-}
 
   /* ---------- SERVICES ---------- */
   .services__grid {
