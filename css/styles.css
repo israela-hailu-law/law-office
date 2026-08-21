@@ -1228,6 +1228,7 @@ body {
 
   /* ---------- HERO: מתחיל מתחת ל-Header, יותר גובה בפועל ---------- */
   .hero {
+    --hero-landscape-bg-y: 20%;
     direction: ltr;
     margin-block-start: 58px;
     height: calc(100dvh - 58px);
@@ -1238,7 +1239,7 @@ body {
     align-items: stretch;
     background-image: url('../assets/images/hero-tablet.webp');
     background-size: cover;
-    background-position: center top;
+    background-position: center var(--hero-landscape-bg-y);
     background-repeat: no-repeat;
   }
 
@@ -1253,10 +1254,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* מרכוז אנכי מלא בתוך הסטריפ, רווח שווה מעליו ומתחתיו */
     justify-content: center;
-    gap: clamp(10px, 3vh, 18px);
+    gap: calc(clamp(10px, 3vh, 18px) + 2px);
     padding-inline: clamp(20px, 4vw, 40px);
-    padding-block: clamp(4px, 1.5vh, 10px);
+    padding-block: 0;
     box-sizing: border-box;
     direction: rtl;
   }
@@ -1278,22 +1280,24 @@ body {
     gap: clamp(10px, 3vh, 18px);
   }
 
+  /* כותרת — הוגדלה */
   .hero__heading {
     color: var(--color-cream);
-    font-size: clamp(1.4rem, 4.6vh, 2.2rem);
+    font-size: clamp(1.6rem, 5.2vh, 2.6rem);
     line-height: 1.15;
     margin-block-end: 0;
   }
 
+  /* טקסט — הוקטן, ורוחב מוגבל לשבירה בת 2 שורות (כוונון ידני נדרש) */
   .hero__subheading {
     color: var(--color-cream);
     margin-inline: 0;
     margin-block-end: 0;
-    font-size: clamp(1rem, 2.8vh, 1.2rem);
-    max-width: 21ch;
+    font-size: clamp(0.85rem, 2.3vh, 1.05rem);
+    max-width: 30ch; /* ⚠️ לכוונן ב-DevTools עד שבירה מדויקת אחרי "תעבורה" */
   }
 
-  /* ---------- כפתורים: מיושרים לימין ---------- */
+  /* ---------- כפתורים ---------- */
   .hero__actions {
     position: relative;
     left: auto;
@@ -1322,7 +1326,6 @@ body {
 
   .hero__actions .btn--primary { order: 1; }
   .hero__actions .btn--secondary { order: 2; }
-   
   /* ---------- SERVICES: 2×2 במקום 4 שורות ---------- */
   .services__grid {
     grid-template-columns: repeat(2, 1fr);
