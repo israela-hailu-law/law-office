@@ -1209,6 +1209,8 @@ body {
    מזהה טלפון (לא טאבלט/דסקטופ) שמסובב ללנדסקייפ
    דרך גובה מסך קטן + מכשיר מגע (לא עכבר).
    ========================================================= */
+@media (orientation: landscape) and (max-height: 500px) and (hover: none) and (pointer: coarse) {
+
   /* ---------- HEADER: קומפקטי, נשאר קבוע כרגיל ---------- */
   .site-header__inner {
     padding-block: 8px;
