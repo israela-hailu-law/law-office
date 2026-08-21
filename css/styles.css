@@ -1237,7 +1237,7 @@ body {
     --hero-landscape-header-h: 54px;
     --hero-landscape-bg-y: 20%;
     --hero-gap-tight: clamp(10px, 3vh, 18px);
-    --hero-gap-wide: clamp(26px, 5.5vh, 36px);
+    --hero-gap-wide: clamp(14px, 3vh, 20px);
     direction: ltr;
     height: calc(100svh - var(--hero-landscape-header-h));  /* היה: 100dvh */
     min-height: 220px;
@@ -1246,7 +1246,7 @@ body {
     flex-direction: row;
     align-items: stretch;
     background-image: url('../assets/images/hero-tablet.webp');
-    background-size: cover;
+    background-size: 100% auto;
     background-position: center var(--hero-landscape-bg-y);
     background-repeat: no-repeat;
   }
@@ -1321,7 +1321,7 @@ body {
     margin-inline-start: 0;
     margin-inline-end: auto;
     margin-block: 0;
-    transform: none;
+    transform: translateX(1px);
     direction: rtl;
   }
 
