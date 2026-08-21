@@ -1277,7 +1277,6 @@ body {
   }
 
 
-  /* ---------- TEXT BLOCK ---------- */
 
 /* ---------- TEXT BLOCK ---------- */
 
@@ -1286,7 +1285,8 @@ body {
   max-width: 450px;
   min-width: 0;
 
-  margin: 0 0 0 auto;
+  /* הבלוק כולו כמה פיקסלים ימינה */
+  margin: 0 -8px 0 auto;
 
   text-align: right;
 }
@@ -1325,9 +1325,13 @@ body {
   position: relative;
 
   width: 52%;
-  max-width: 560px;
+  max-width: 450px;
   min-width: 0;
 
+  /*
+   * לא להזיז את הכפתורים ימינה.
+   * ה-auto נשאר רק בצד שמאל כדי לשמור אותם בתוך אזור התוכן.
+   */
   margin: 22px 0 0 auto;
 
   display: flex;
@@ -1343,6 +1347,14 @@ body {
   transform: none;
 
   box-sizing: border-box;
+}
+
+.hero__actions .btn {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: nowrap;
 }
 
 .hero__actions .btn {
