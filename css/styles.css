@@ -1350,14 +1350,6 @@ body {
 }
 
 .hero__actions .btn {
-  flex: 0 1 auto;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-  white-space: nowrap;
-}
-
-.hero__actions .btn {
   height: clamp(38px, 7vh, 46px);
 
   padding-inline: clamp(14px, 2.5vw, 24px);
@@ -1366,6 +1358,10 @@ body {
 
   flex: 0 1 auto;
   min-width: 0;
+  max-width: 100%;
+
+  box-sizing: border-box;
+  white-space: nowrap;
 }
 
 .hero__actions .btn--primary {
