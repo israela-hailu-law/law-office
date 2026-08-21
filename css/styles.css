@@ -1245,105 +1245,124 @@ body {
   }
 
   /* ---------- HERO CONTENT ---------- */
-  .hero__content {
-    order: 1;
-    flex: 1 1 100%;
-    max-width: 100%;
-    min-height: 0;
-    height: auto;
+.hero__content {
+  order: 1;
+  flex: 1 1 100%;
+  max-width: 100%;
+  min-height: 0;
+  height: auto;
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
 
-    gap: clamp(12px, 2.5vh, 20px);
+  /* הבלוק יושב בצד ימין */
+  align-items: flex-end;
+  justify-content: center;
 
-    padding-inline: clamp(20px, 4vw, 40px);
-    padding-block: clamp(10px, 3vh, 20px);
+  /* רווח בין הטקסט לכפתורים */
+  gap: clamp(14px, 2.5vh, 20px);
 
-    box-sizing: border-box;
-    direction: rtl;
-  }
+  padding-inline: clamp(20px, 4vw, 40px);
+  padding-block: clamp(10px, 3vh, 20px);
 
-  .hero__content .hero__heading-desktop {
-    display: inline;
-  }
+  box-sizing: border-box;
+  direction: rtl;
+}
 
-  .hero__content .hero__heading-mobile {
-    display: none;
-  }
+.hero__content .hero__heading-desktop {
+  display: inline;
+}
 
-  /* ---------- TEXT ---------- */
-  .hero__text-col {
-    width: 100%;
-    max-width: min(480px, 62%);
-    margin: 0;
-    text-align: right;
-  }
+.hero__content .hero__heading-mobile {
+  display: none;
+}
 
-  .hero__intro {
-    display: block;
-  }
 
-  .hero__heading {
-    color: var(--color-cream);
+/* ---------- TEXT BLOCK ---------- */
 
-    font-size: clamp(1.5rem, 5.2vh, 2.4rem);
-    line-height: 1.15;
+.hero__text-col {
+  width: 100%;
+  max-width: min(480px, 62%);
 
-    margin-block-end: 6px;
-  }
+  margin: 0;
 
-  .hero__subheading {
-    color: var(--color-cream);
+  text-align: right;
+}
 
-    margin-inline: 0;
-    margin-block-end: 0;
+.hero__intro {
+  display: block;
+}
 
-    font-size: clamp(0.85rem, 2.6vh, 1.05rem);
-  }
+.hero__heading {
+  color: var(--color-cream);
 
-  /* ---------- BUTTONS ---------- */
-  .hero__actions {
-    position: relative;
+  /* קצת יותר גדול */
+  font-size: clamp(1.5rem, 5.2vh, 2.4rem);
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+  line-height: 1.15;
 
-    align-items: center;
-    justify-content: flex-start;
+  margin-block-end: 8px;
+}
 
-    gap: 10px;
+.hero__subheading {
+  color: var(--color-cream);
 
-    width: 100%;
-    max-width: min(480px, 62%);
+  margin: 0;
 
-    margin: 0;
+  font-size: clamp(0.85rem, 2.6vh, 1.05rem);
 
-    transform: none;
+  line-height: 1.4;
+}
 
-    direction: rtl;
-  }
 
-  .hero__actions .btn {
-    height: clamp(38px, 7vh, 46px);
+/* ---------- BUTTONS ---------- */
 
-    padding-inline: clamp(16px, 3.5vw, 30px);
+.hero__actions {
+  position: relative;
 
-    font-size: clamp(0.8rem, 2.2vh, 1rem);
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap;
 
-    flex: 0 0 auto;
-  }
+  align-items: center;
 
-  .hero__actions .btn--primary {
-    order: 1;
-  }
+  /* בגלל direction: rtl, הם יתחילו מימין */
+  justify-content: flex-start;
 
-  .hero__actions .btn--secondary {
-    order: 2;
-  }
+  gap: 10px;
+
+  width: 100%;
+  max-width: min(480px, 62%);
+
+  margin: 0;
+
+  transform: none;
+
+  direction: rtl;
+}
+
+.hero__actions .btn {
+  display: inline-flex !important;
+
+  align-items: center;
+  justify-content: center;
+
+  height: clamp(38px, 7vh, 46px);
+
+  padding-inline: clamp(16px, 3.5vw, 30px);
+
+  font-size: clamp(0.8rem, 2.2vh, 1rem);
+
+  flex: 0 0 auto;
+}
+
+.hero__actions .btn--primary {
+  order: 1;
+}
+
+.hero__actions .btn--secondary {
+  order: 2;
+}
 
   /* ---------- SERVICES ---------- */
   .services__grid {
