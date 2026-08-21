@@ -1210,8 +1210,9 @@ body {
    דרך גובה מסך קטן + מכשיר מגע (לא עכבר).
    ========================================================= */
 @media (orientation: landscape) and (max-height: 500px) and (hover: none) and (pointer: coarse) {
-
-  /* ---------- HEADER: בדיוק כמו שהיה, לא משתנה ---------- */
+ 
+   
+   /* ---------- HEADER: בדיוק כמו שהיה, לא משתנה ---------- */
   .site-header__inner {
     padding-block: 8px;
   }
@@ -1226,12 +1227,13 @@ body {
     font-size: 0.78rem;
   }
 
-  /* ---------- HERO: מתחיל מתחת ל-Header, יותר גובה בפועל ---------- */
+  /* ---------- HERO: צמוד בדיוק לגובה ה-Header, בלי רווח ---------- */
   .hero {
+    --hero-landscape-header-h: 54px; /* = לוגו 38px + padding 8px+8px */
     --hero-landscape-bg-y: 20%;
     direction: ltr;
-    margin-block-start: 58px;
-    height: calc(100dvh - 58px);
+    margin-block-start: var(--hero-landscape-header-h);
+    height: calc(100dvh - var(--hero-landscape-header-h));
     min-height: 220px;
     max-height: none;
     display: flex;
@@ -1254,9 +1256,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* מרכוז אנכי מלא בתוך הסטריפ, רווח שווה מעליו ומתחתיו */
     justify-content: center;
-    gap: calc(clamp(10px, 3vh, 18px) + 2px);
+    gap: calc(clamp(10px, 3vh, 18px) + 14px);
     padding-inline: clamp(20px, 4vw, 40px);
     padding-block: 0;
     box-sizing: border-box;
@@ -1280,21 +1281,20 @@ body {
     gap: clamp(10px, 3vh, 18px);
   }
 
-  /* כותרת — הוגדלה */
+  /* כותרת — עוד +10% */
   .hero__heading {
     color: var(--color-cream);
-    font-size: clamp(1.6rem, 5.2vh, 2.6rem);
+    font-size: clamp(1.75rem, 5.7vh, 2.9rem);
     line-height: 1.15;
     margin-block-end: 0;
   }
 
-  /* טקסט — הוקטן, ורוחב מוגבל לשבירה בת 2 שורות (כוונון ידני נדרש) */
   .hero__subheading {
     color: var(--color-cream);
     margin-inline: 0;
     margin-block-end: 0;
     font-size: clamp(0.85rem, 2.3vh, 1.05rem);
-    max-width: 40ch; /* ⚠️ לכוונן ב-DevTools עד שבירה מדויקת אחרי "תעבורה" */
+    max-width: 40ch;
   }
 
   /* ---------- כפתורים ---------- */
@@ -1326,6 +1326,7 @@ body {
 
   .hero__actions .btn--primary { order: 1; }
   .hero__actions .btn--secondary { order: 2; }
+   
   /* ---------- SERVICES: 2×2 במקום 4 שורות ---------- */
   .services__grid {
     grid-template-columns: repeat(2, 1fr);
