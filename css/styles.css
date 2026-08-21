@@ -1234,7 +1234,7 @@ body {
     flex-direction: row;
     align-items: stretch;
 
-    background-image: url('../assets/images/hero-tablet.webp');
+    background-image: url('../assets/images/hero-desktop.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1244,7 +1244,6 @@ body {
     display: none;
   }
 
-  /* ---------- HERO CONTENT ---------- */
   /* ---------- HERO CONTENT ---------- */
 
   .hero__content {
@@ -1320,34 +1319,29 @@ body {
 
 
 /* ---------- BUTTONS ---------- */
-
 .hero__actions {
-  position: relative;
+    position: relative;
 
-  width: 52%;
-  max-width: 450px;
-  min-width: 0;
+    width: 52%;
+    max-width: 450px;
+    min-width: 0;
 
-  /*
-   * לא להזיז את הכפתורים ימינה.
-   * ה-auto נשאר רק בצד שמאל כדי לשמור אותם בתוך אזור התוכן.
-   */
-  margin: 22px 0 0 auto;
+    margin: 22px -8px 0 auto;
 
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 
-  align-items: center;
-  justify-content: flex-start;
+    align-items: center;
+    justify-content: flex-start;
 
-  gap: 12px;
+    gap: 12px;
 
-  direction: rtl;
+    direction: rtl;
 
-  transform: none;
+    transform: none;
 
-  box-sizing: border-box;
-}
+    box-sizing: border-box;
+  }
 
 .hero__actions .btn {
   height: clamp(38px, 7vh, 46px);
@@ -1356,7 +1350,7 @@ body {
 
   font-size: clamp(0.8rem, 2.3vh, 1rem);
 
-  flex: 0 1 auto;
+  flex: 1 1 0;
   min-width: 0;
   max-width: 100%;
 
