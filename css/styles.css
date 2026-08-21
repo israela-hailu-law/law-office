@@ -1209,18 +1209,27 @@ body {
    מזהה טלפון (לא טאבלט/דסקטופ) שמסובב ללנדסקייפ
    דרך גובה מסך קטן + מכשיר מגע (לא עכבר).
    ========================================================= */
-@media (orientation: landscape) and (max-height: 500px) and (hover: none) and (pointer: coarse) {
-
-  /* ---------- HEADER: מוסתר כדי לחשוף את כל התמונה ---------- */
-  .site-header {
-    display: none;
+  /* ---------- HEADER: קומפקטי, נשאר קבוע כרגיל ---------- */
+  .site-header__inner {
+    padding-block: 8px;
   }
 
-  /* ---------- HERO: ממלא את כל הגובה (אין עוד header שתופס מקום) ---------- */
+  .site-header__logo {
+    height: 38px;
+  }
+
+  .site-header__cta {
+    height: 36px;
+    padding-inline: 16px;
+    font-size: 0.78rem;
+  }
+
+  /* ---------- HERO: מתחיל מתחת ל-Header, לא מתחתיו ---------- */
   .hero {
     direction: ltr;
-    height: 100svh;
-    min-height: 280px;
+    margin-block-start: 58px;
+    height: calc(100svh - 58px);
+    min-height: 220px;
     max-height: none;
     display: flex;
     flex-direction: row;
@@ -1243,9 +1252,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: clamp(8px, 2.2vh, 16px);
+    gap: clamp(6px, 2vh, 14px);
     padding-inline: clamp(20px, 4vw, 40px);
-    padding-block: clamp(10px, 3vh, 20px);
+    padding-block: clamp(8px, 2.5vh, 16px);
     box-sizing: border-box;
     direction: rtl;
   }
@@ -1265,7 +1274,7 @@ body {
 
   .hero__heading {
     color: var(--color-cream);
-    font-size: clamp(1.35rem, 4.6vh, 2.1rem);
+    font-size: clamp(1.25rem, 4.2vh, 2rem);
     line-height: 1.15;
     margin-block-end: 6px;
   }
@@ -1274,14 +1283,17 @@ body {
     color: var(--color-cream);
     margin-inline: 0;
     margin-block-end: 0;
-    font-size: clamp(0.85rem, 2.6vh, 1.05rem);
+    font-size: clamp(0.8rem, 2.4vh, 1rem);
   }
 
+  /* ---------- כפתורים: מיושרים לימין, מתחילים מאותה נק' כמו הטקסט ---------- */
   .hero__actions {
     position: relative;
+    left: auto;
+    bottom: auto;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
@@ -1289,19 +1301,20 @@ body {
     max-width: min(480px, 62%);
     margin-inline-start: 0;
     margin-inline-end: auto;
+    margin-block: 0;
     transform: none;
     direction: rtl;
   }
 
   .hero__actions .btn {
-    height: clamp(38px, 7vh, 46px);
-    padding-inline: clamp(16px, 3.5vw, 30px);
-    font-size: clamp(0.8rem, 2.2vh, 1rem);
+    height: clamp(34px, 6.5vh, 44px);
+    padding-inline: clamp(14px, 3vw, 26px);
+    font-size: clamp(0.76rem, 2.1vh, 0.95rem);
+    white-space: nowrap;
   }
 
   .hero__actions .btn--primary { order: 1; }
   .hero__actions .btn--secondary { order: 2; }
-
   /* ---------- SERVICES: 2×2 במקום 4 שורות ---------- */
   .services__grid {
     grid-template-columns: repeat(2, 1fr);
