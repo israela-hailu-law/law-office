@@ -1211,11 +1211,16 @@ body {
    ========================================================= */
 @media (orientation: landscape) and (max-height: 500px) and (hover: none) and (pointer: coarse) {
 
-  /* ---------- HERO: מתנהג כמו טאבלט/דסקטופ ---------- */
+  /* ---------- HEADER: מוסתר כדי לחשוף את כל התמונה ---------- */
+  .site-header {
+    display: none;
+  }
+
+  /* ---------- HERO: ממלא את כל הגובה (אין עוד header שתופס מקום) ---------- */
   .hero {
     direction: ltr;
-    height: calc(100svh - 70px);
-    min-height: 300px;
+    height: 100svh;
+    min-height: 280px;
     max-height: none;
     display: flex;
     flex-direction: row;
@@ -1238,8 +1243,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-inline: 24px;
-    padding-block: 10px;
+    gap: clamp(8px, 2.2vh, 16px);
+    padding-inline: clamp(20px, 4vw, 40px);
+    padding-block: clamp(10px, 3vh, 20px);
     box-sizing: border-box;
     direction: rtl;
   }
@@ -1249,7 +1255,7 @@ body {
 
   .hero__text-col {
     width: 100%;
-    max-width: 420px;
+    max-width: min(480px, 62%);
     margin-inline-start: 0;
     margin-inline-end: auto;
     text-align: right;
@@ -1259,31 +1265,40 @@ body {
 
   .hero__heading {
     color: var(--color-cream);
-    font-size: clamp(1.3rem, 3.4vh, var(--fs-h1));
+    font-size: clamp(1.35rem, 4.6vh, 2.1rem);
     line-height: 1.15;
+    margin-block-end: 6px;
   }
 
   .hero__subheading {
     color: var(--color-cream);
     margin-inline: 0;
-    margin-block-end: 12px;
-    font-size: clamp(0.82rem, 2.2vh, var(--fs-body-lg));
+    margin-block-end: 0;
+    font-size: clamp(0.85rem, 2.6vh, 1.05rem);
   }
 
   .hero__actions {
     position: relative;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
-    width: auto;
-    max-width: none;
+    width: 100%;
+    max-width: min(480px, 62%);
     margin-inline-start: 0;
     margin-inline-end: auto;
     transform: none;
     direction: rtl;
   }
+
+  .hero__actions .btn {
+    height: clamp(38px, 7vh, 46px);
+    padding-inline: clamp(16px, 3.5vw, 30px);
+    font-size: clamp(0.8rem, 2.2vh, 1rem);
+  }
+
   .hero__actions .btn--primary { order: 1; }
   .hero__actions .btn--secondary { order: 2; }
 
