@@ -1214,8 +1214,11 @@ body {
    
    /* ---------- HEADER: בדיוק כמו שהיה, לא משתנה ---------- */
 
-     .site-header {
-    position: static;
+    .site-header {
+    position: fixed;
+    background: rgba(var(--color-navy-rgb), 0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
   }
    
    .site-header__inner {
@@ -1234,12 +1237,11 @@ body {
 
   /* ---------- HERO: צמוד בדיוק לגובה ה-Header, בלי רווח ---------- */
   .hero {
-    --hero-landscape-header-h: 54px;
-    --hero-landscape-bg-y: 20%;
     --hero-gap-tight: clamp(10px, 3vh, 18px);
     --hero-gap-wide: clamp(14px, 3vh, 20px);
+    --hero-landscape-bg-y: 20%;
     direction: ltr;
-    height: calc(100svh - var(--hero-landscape-header-h));  /* היה: 100dvh */
+    height: 100lvh;
     min-height: 220px;
     max-height: none;
     display: flex;
@@ -1321,7 +1323,7 @@ body {
     margin-inline-start: 0;
     margin-inline-end: auto;
     margin-block: 0;
-    transform: translateX(1px);
+    transform: translateX(2px);
     direction: rtl;
   }
 
