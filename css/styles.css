@@ -1,4 +1,4 @@
-/* =========================================================
+ /* =========================================================
    BASE
    ========================================================= */
 html {
@@ -1216,7 +1216,7 @@ body {
 
     .site-header {
     position: fixed;
-    background: rgba(var(--color-navy-rgb);
+    background: rgba(var(--color-navy-rgb), 0.55);
   }
    
    .site-header__inner {
