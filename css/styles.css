@@ -1239,7 +1239,7 @@ body {
     --hero-gap-tight: clamp(10px, 3vh, 18px);
     --hero-gap-wide: clamp(26px, 5.5vh, 36px);
     direction: ltr;
-    height: calc(100dvh - var(--hero-landscape-header-h));
+    height: calc(100svh - var(--hero-landscape-header-h));  /* היה: 100dvh */
     min-height: 220px;
     max-height: none;
     display: flex;
@@ -1263,9 +1263,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: var(--hero-gap-wide);   /* היה: calc(clamp(...) + 14px) */
+    gap: var(--hero-gap-wide);
     padding-inline: clamp(20px, 4vw, 40px);
-    padding-block: 0;
+    padding-block: clamp(2px, 1vh, 6px);   /* היה: 0 - נותן טיפה נשימה בלי לגזול גובה */
     box-sizing: border-box;
     direction: rtl;
   }
@@ -1334,7 +1334,14 @@ body {
   .hero__actions .btn--secondary { order: 2; }
    
   /* ---------- SERVICES: 2×2 במקום 4 שורות ---------- */
-  .services__grid {
+
+     .services__intro {
+    text-align: center;
+    margin-inline: auto;
+    max-width: 900px;
+  }
+   
+   .services__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
