@@ -1279,81 +1279,90 @@ body {
 
   /* ---------- TEXT BLOCK ---------- */
 
-  .hero__text-col {
-    width: 52%;
-    max-width: 560px;
-    min-width: 360px;
+/* ---------- TEXT BLOCK ---------- */
 
-    margin: 0 0 0 auto;
+.hero__text-col {
+  width: 52%;
+  max-width: 450px;
+  min-width: 0;
 
-    text-align: right;
-  }
+  margin: 0 0 0 auto;
 
-  .hero__intro {
-    display: block;
-  }
-
-  .hero__heading {
-    color: var(--color-cream);
-
-    font-size: clamp(1.6rem, 5.5vh, 2.5rem);
-    line-height: 1.15;
-
-    margin: 0 0 8px 0;
-  }
-
-  .hero__subheading {
-    color: var(--color-cream);
-
-    margin: 0;
-
-    font-size: clamp(0.9rem, 2.7vh, 1.08rem);
-    line-height: 1.4;
-
-    text-align: right;
-  }
+  text-align: right;
+}
 
 
-  /* ---------- BUTTONS ---------- */
+/* ---------- HEADING ---------- */
 
-  .hero__actions {
-    position: relative;
+.hero__heading {
+  color: var(--color-cream);
 
-    width: 52%;
-    max-width: 560px;
-    min-width: 360px;
+  font-size: clamp(1.85rem, 5.5vh, 2.75rem);
+  line-height: 1.15;
 
-    margin: 18px 0 0 auto;
+  margin: 0 0 8px 0;
+}
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
 
-    gap: 12px;
+/* ---------- SUBHEADING ---------- */
 
-    direction: rtl;
+.hero__subheading {
+  color: var(--color-cream);
 
-    transform: none;
-  }
+  width: 100%;
+  margin: 0;
 
-  .hero__actions .btn {
-    height: clamp(38px, 7vh, 46px);
+  font-size: clamp(0.9rem, 2.7vh, 1.08rem);
+  line-height: 1.4;
 
-    padding-inline: clamp(16px, 3vw, 28px);
+  text-align: right;
+}
 
-    font-size: clamp(0.8rem, 2.3vh, 1rem);
 
-    flex: 0 0 auto;
-  }
+/* ---------- BUTTONS ---------- */
 
-  .hero__actions .btn--primary {
-    order: 1;
-  }
+.hero__actions {
+  position: relative;
 
-  .hero__actions .btn--secondary {
-    order: 2;
-  }
+  width: 52%;
+  max-width: 560px;
+  min-width: 0;
+
+  margin: 22px 0 0 auto;
+
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 12px;
+
+  direction: rtl;
+
+  transform: none;
+
+  box-sizing: border-box;
+}
+
+.hero__actions .btn {
+  height: clamp(38px, 7vh, 46px);
+
+  padding-inline: clamp(14px, 2.5vw, 24px);
+
+  font-size: clamp(0.8rem, 2.3vh, 1rem);
+
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.hero__actions .btn--primary {
+  order: 1;
+}
+
+.hero__actions .btn--secondary {
+  order: 2;
+}
 
   /* ---------- SERVICES ---------- */
   .services__grid {
