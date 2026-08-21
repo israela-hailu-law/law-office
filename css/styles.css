@@ -1211,101 +1211,145 @@ body {
    ========================================================= */
 @media (orientation: landscape) and (max-height: 500px) and (hover: none) and (pointer: coarse) {
 
-  /* ---------- HEADER: מוסתר כדי לחשוף את כל התמונה ---------- */
+  /* ---------- HEADER ---------- */
   .site-header {
-    display: none;
+    display: block;
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
+    z-index: 10;
   }
 
-  /* ---------- HERO: ממלא את כל הגובה (אין עוד header שתופס מקום) ---------- */
+  /* ---------- HERO ---------- */
   .hero {
     direction: ltr;
-    height: 100svh;
+
+    height: calc(100svh - var(--header-height, 70px));
     min-height: 280px;
     max-height: none;
+
     display: flex;
     flex-direction: row;
     align-items: stretch;
+
     background-image: url('../assets/images/hero-tablet.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  .hero__media { display: none; }
+  .hero__media {
+    display: none;
+  }
 
+  /* ---------- HERO CONTENT ---------- */
   .hero__content {
     order: 1;
     flex: 1 1 100%;
     max-width: 100%;
     min-height: 0;
     height: auto;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    gap: clamp(8px, 2.2vh, 16px);
+
+    gap: clamp(12px, 2.5vh, 20px);
+
     padding-inline: clamp(20px, 4vw, 40px);
     padding-block: clamp(10px, 3vh, 20px);
+
     box-sizing: border-box;
     direction: rtl;
   }
 
-  .hero__content .hero__heading-desktop { display: inline; }
-  .hero__content .hero__heading-mobile { display: none; }
+  .hero__content .hero__heading-desktop {
+    display: inline;
+  }
 
+  .hero__content .hero__heading-mobile {
+    display: none;
+  }
+
+  /* ---------- TEXT ---------- */
   .hero__text-col {
     width: 100%;
     max-width: min(480px, 62%);
-    margin-inline-start: 0;
-    margin-inline-end: auto;
+    margin: 0;
     text-align: right;
   }
 
-  .hero__intro { display: block; }
+  .hero__intro {
+    display: block;
+  }
 
   .hero__heading {
     color: var(--color-cream);
-    font-size: clamp(1.35rem, 4.6vh, 2.1rem);
+
+    font-size: clamp(1.5rem, 5.2vh, 2.4rem);
     line-height: 1.15;
+
     margin-block-end: 6px;
   }
 
   .hero__subheading {
     color: var(--color-cream);
+
     margin-inline: 0;
     margin-block-end: 0;
+
     font-size: clamp(0.85rem, 2.6vh, 1.05rem);
   }
 
+  /* ---------- BUTTONS ---------- */
   .hero__actions {
     position: relative;
+
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+
     align-items: center;
     justify-content: flex-start;
+
     gap: 10px;
+
     width: 100%;
     max-width: min(480px, 62%);
-    margin-inline-start: 0;
-    margin-inline-end: auto;
+
+    margin: 0;
+
     transform: none;
+
     direction: rtl;
   }
 
   .hero__actions .btn {
     height: clamp(38px, 7vh, 46px);
+
     padding-inline: clamp(16px, 3.5vw, 30px);
+
     font-size: clamp(0.8rem, 2.2vh, 1rem);
+
+    flex: 0 0 auto;
   }
 
-  .hero__actions .btn--primary { order: 1; }
-  .hero__actions .btn--secondary { order: 2; }
+  .hero__actions .btn--primary {
+    order: 1;
+  }
 
-  /* ---------- SERVICES: 2×2 במקום 4 שורות ---------- */
+  .hero__actions .btn--secondary {
+    order: 2;
+  }
+
+  /* ---------- SERVICES ---------- */
   .services__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
 
   /* ---------- CONTACT FORM: כמו דסקטופ/טאבלט ---------- */
   .contact-form {
