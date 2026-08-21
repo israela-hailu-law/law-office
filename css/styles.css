@@ -1241,22 +1241,22 @@ body {
 
   /* ---------- HERO CONTENT ---------- */
   .hero__content {
-    order: 1;
-    flex: 1 1 100%;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;   /* שונה מ-flex-start: זה מיישר את כל הילדים לימין אוטומטית */
-    padding-inline: clamp(30px, 6vw, 80px);
-    padding-block: 20px;
-    box-sizing: border-box;
-    direction: rtl;
-    gap: 16px;                /* חדש: רווח אחיד בין text-col לבין actions */
-  }
+  order: 1;
+  flex: 1 1 100%;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;   /* ← שונה בחזרה ל-flex-start! זה מה שבאמת מצמיד לימין ב-RTL */
+  padding-inline: clamp(30px, 6vw, 80px);
+  padding-block: 20px;
+  box-sizing: border-box;
+  direction: rtl;
+  gap: 16px;
+}
 
   .hero__content .hero__heading-desktop {
     display: inline;
