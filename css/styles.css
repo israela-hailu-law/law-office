@@ -1294,7 +1294,7 @@ body {
     margin-inline: 0;
     margin-block-end: 0;
     font-size: clamp(0.85rem, 2.3vh, 1.05rem);
-    max-width: 30ch; /* ⚠️ לכוונן ב-DevTools עד שבירה מדויקת אחרי "תעבורה" */
+    max-width: 40ch; /* ⚠️ לכוונן ב-DevTools עד שבירה מדויקת אחרי "תעבורה" */
   }
 
   /* ---------- כפתורים ---------- */
